@@ -64,13 +64,15 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "lint": "eslint --ext .js src --fix"
   },
   "scriptsExplain": {
     "start": "启动项目",
     "build": "构建项目",
     "test": "运行测试",
-    "eject": "把隐藏的webpack配置暴露出来，操作不可逆"
+    "eject": "把隐藏的webpack配置暴露出来，操作不可逆",
+    "lint": "eslint检查"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -141,5 +143,11 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
