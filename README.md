@@ -29,7 +29,7 @@ eslint检查兼修复
       exclude: /@babel(?:\/|\\{1,2})runtime/,
       loader: require.resolve('babel-loader'),
       options: {
-        babelrc: false,
+        babelrc: false, // 改为true即可启用babelrc
         ...
 ```
 
