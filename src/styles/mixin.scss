@@ -1,0 +1,73 @@
+// 设置宽高
+@mixin size($width, $height:$width){
+  width: $width;
+  height: $height;
+}
+
+// @include boxCenter(center,false);
+// 使用css3 box-align/box-pack水平垂直居中
+@mixin boxCenter($pack:center, $align: center) {
+  @if($align !=false) {
+      -webkit-box-align: $align;
+      box-align: $align;
+  }
+  @if($pack !=false) {
+      -webkit-box-pack: $pack;
+      box-pack: $pack;
+  }
+  display:-webkit-box;
+  display:box;
+}
+
+// @include boxClamp(3); >> suitable Mobile and no height 
+// 多行超出设置点点点，适用于webkit内核的浏览器
+@mixin boxClamp($v:1){
+  overflow:hidden;
+  -webkit-line-clamp: $v;
+  line-clamp: $v;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  display:-webkit-box;
+  display:box;
+}
+
+// @include center-translate($direction: both);
+// 利用translate可以实现未知宽高的东东水平/垂直居中
+@mixin center-translate($direction: both) {
+  position: absolute;
+  @if $direction == both {
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate3d(-50%, -50%, 0);
+      transform: translate3d(-50%, -50%, 0);
+  }
+  @else if $direction == horizontal {
+      left: 50%;
+      -webkit-transform: translate3d(-50%, 0, 0);
+      transform: translate3d(-50%, 0, 0);
+  }
+  @else if $direction == vertical {
+      top: 50%;
+      -webkit-transform: translate3d(0, -50%, 0);
+      transform: translate3d(0, -50%, 0);
+  }
+}
+
+// @include ellipsis-overflow;
+// 文字溢出点点点
+@mixin ellipsis-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+
+// 父元素相对，子元素绝对
+@mixin absolut($index){
+  position: relative;
+  &:after{
+      content: "";
+      position: absolute;
+      z-index: $index;
+  }
+}

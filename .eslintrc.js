@@ -1,4 +1,5 @@
 module.exports = {
+  extends: 'react-app',
   env: {
     browser: true,
     node: true,
@@ -13,10 +14,10 @@ module.exports = {
       jsx: true,
       modules: true
     },
-    sourceType: "module",
+    sourceType: 'module',
   },
   plugins: [
-    "react"
+    'react'
   ],
   rules: {
     'max-len': 0,
@@ -34,7 +35,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: true
     }], // 禁止引入未添加到依赖中的库
-    quotes: ["error", "single"],
-    "import/no-extraneous-dependencies": 0,
+    quotes: ['error', 'single'],
+    // 'import/no-extraneous-dependencies': 0,
   }
 }

@@ -120,6 +120,16 @@ module.exports = function(webpackEnv) {
           options: {
             sourceMap: true,
           },
+        },
+        {
+          loader: require.resolve('sass-resources-loader'),
+          options: {
+            resources: [
+              // resolve方法第二个参数为scss配置文件地址，如果有多个，就进行依次添加即可
+              path.resolve(__dirname, './../src/styles/variable.scss'),
+              path.resolve(__dirname, './../src/styles/mixin.scss'),
+            ],
+          }
         }
       );
     }
@@ -290,6 +300,7 @@ module.exports = function(webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+        '@': path.join(__dirname, '..', 'src'),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
