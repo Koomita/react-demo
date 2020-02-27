@@ -126,8 +126,8 @@ module.exports = function(webpackEnv) {
           options: {
             resources: [
               // resolve方法第二个参数为scss配置文件地址，如果有多个，就进行依次添加即可
-              path.resolve(__dirname, './../src/styles/variable.scss'),
-              path.resolve(__dirname, './../src/styles/mixin.scss'),
+              // 添加共用scss
+              path.resolve(__dirname, './../src/styles/common.scss'),
             ],
           }
         }
