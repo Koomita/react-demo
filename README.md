@@ -40,14 +40,19 @@ eslint检查兼修复
 已经使用函数生成了简单明了的margin/padding样式，减少设置margin/padding的时间
 
 - 设置margin
+
   `m{数值}` - 四周外边距
+
   `m{l/t/r/b}${数值}` - l左/t上/r右/b下
 
 - 设置padding
+
   `p{数值}` - 四周内边距
+  
   `p{l/t/r/b}` - l左/t上/r右/b下
 
 - eg 设置一个外边距20px，内边距30px的盒子
+
 ```html
   <div className="m20 p20"></div>
 ```

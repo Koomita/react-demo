@@ -51,12 +51,15 @@ class Counter extends Component {
         <button onClick={onIncrement}>
           +
         </button>
+        {' '}
         <button onClick={onDecrement}>
           -
         </button>
+        {' '}
         <button onClick={this.incrementIfOdd}>
           奇数相加
         </button>
+        {' s'}
         <button onClick={this.incrementAsync}>
           异步相加
         </button>
